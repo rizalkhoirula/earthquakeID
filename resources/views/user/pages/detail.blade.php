@@ -12,10 +12,11 @@
                 <div class="main__menu">
                     <div class="stellarnav">
                         <ul class="navclass" id="scroll">
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#statistik">Statistik</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#kontak">kontak</a></li>
+                            <li><a href="{{ url('/') }}#home">Home</a></li>
+<li><a href="{{ url('/') }}#statistik">Statistik</a></li>
+<li><a href="{{ url('/') }}#about">About</a></li>
+<li><a href="{{ url('/') }}#kontak">Kontak</a></li>
+
                             
                         </ul>
                     </div>
@@ -84,14 +85,14 @@
                                 <ul>
                                     <li>
                                         <a style="color: white" class="blog-author" href="#">
-                                            <img src="{{ asset('user/assets/img/blog/auhor1.jpg') }}" alt="">Cris Gyle</a>
+                                            <img src="{{ asset('user/assets/img/blog/auhor1.jpg') }}" alt="">Intan</a>
                                     </li>
                                     <li><a href="#" style="color: white"><i class="fal fa-calendar-alt"></i> {{ $data->tanggal }}</a>
                                     </li>
                                     <li><a href="#" style="color: white"><i class="fal fa-clock"></i> 01 MiN READ</a>
                                     </li>
                                 </ul>
-                            </div style="color: white">A campaign manager or campaign director is a paid or volunteer individual whose role is to coordinate a political campaign's operations such as fundraising, advertising, polling, getting out the vote with direct contact to the public.Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                            </div style="color: white">{{$deskripsi}}
                             <p></p>
 
 

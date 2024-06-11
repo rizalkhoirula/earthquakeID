@@ -21,11 +21,14 @@ class LandingController extends Controller
     }
 
     public function detail($id)
-    {
-        $data = Gempa::find($id);
-        return view('user.pages.detail', [
-            'data' => $data
-        ]);
-    }
+{
+    $data = Gempa::find($id);
+    $deskripsi = $data->deskripsi;
+
+    return view('user.pages.detail', [
+        'data' => $data,
+        'deskripsi' => $deskripsi
+    ]);
+}
 }
 

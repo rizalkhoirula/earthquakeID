@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'longitude' => '112.73572972100665',
             'radius' => '15',
             'korban' => '50',
+            'deskripsi' => 'INI DESKRIPSI DEKKK',
         ]);
 
         Gempa::create([
@@ -45,6 +46,7 @@ class DatabaseSeeder extends Seeder
             'longitude' => '113.22844163170087',
             'radius' => '24',
             'korban' => '200',
+            'deskripsi' => 'INI DESKRIPSI BANGGG',
         ]);
 
         Gempa::create([
@@ -54,6 +56,7 @@ class DatabaseSeeder extends Seeder
             'longitude' => '113.71184234820917',
             'radius' => '10',
             'korban' => '100',
+            'deskripsi' => 'INI DESKRIPSI DEKKK',
         ]);
 
         Gempa::create([
@@ -63,6 +66,7 @@ class DatabaseSeeder extends Seeder
             'longitude' => '107.70486473980309',
             'radius' => '9',
             'korban' => '500',
+            'deskripsi' => 'INI DESKRIPSI BANGGG',
         ]);
     }
 }

@@ -44,6 +44,7 @@
                                     <th>Longitude</th>
                                     <th>Radius</th>
                                     <th>Korban</th>
+                                    <th>Deskripsi</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -57,6 +58,7 @@
                                     <td>{{ $data->longitude }}</td>
                                     <td>{{ $data->radius }} KM</td>
                                     <td>{{ $data->korban }}</td>
+                                    <td>{{ $data->deskripsi }}</td>
                                     <td>
                                         <div class="d-flex">
                                             <a href="#" data-bs-toggle="modal" data-bs-target="#Edit{{ $data->id }}" class="btn btn-primary shadow btn-xs sharp me-1"><i class="fa fa-pencil"></i></a>
@@ -114,6 +116,12 @@
                                                         <div class="form-group">
                                                             <label>Korban</label>
                                                             <input id="long{{ $data->id }}" type="text" value="{{ $data->korban }}" name="korban" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="form-group">
+                                                            <label>Deskripsi</label>
+                                                            <input id="long{{ $data->id }}" type="text-area" value="{{ $data->deskripsi }}" name="deskripsi" class="form-control">
                                                         </div>
                                                     </div>
 
@@ -213,6 +221,13 @@
                        <input type="number" name="korban" class="form-control" required>
                        </div>
                        </div>
+                       <div class="row">
+    <div class="form-group">
+        <label for="deskripsi">Deskripsi</label>
+        <textarea id="deskripsi" name="deskripsi" class="form-control" rows="5" required></textarea>
+    </div>
+</div>
+
 
                         <div class="map2">
                             <div id="map2"></div>

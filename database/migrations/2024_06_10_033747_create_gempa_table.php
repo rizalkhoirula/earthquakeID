@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('longitude');
             $table->string('radius');
             $table->string('korban');
+            $table->string('deskripsi');
             $table->timestamps();
         });
     }
