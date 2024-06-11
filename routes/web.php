@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\OutletMapController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OutletController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\GempaController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\User\LandingController;
+use App\Http\Controllers\VisualisasiGempaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,20 +14,29 @@ use App\Http\Controllers\OutletController;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| routes are loaded by the RouteServiceProvider and all of them will
+| be assigned to the "web" middleware group. Make something great!
 |
 */
 
-Route::get('/', [OutletMapController::class, 'index']);
+# Auth Controller
+Route::get('/login', [AuthController::class, 'index']);
+Route::post('/login', [AuthController::class, 'login']);
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('IsLogin');
 
-Auth::routes();
+# Dashboard Controller
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('IsLogin');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+# Gempa Controller
+Route::get('/gempa', [GempaController::class, 'index'])->middleware('IsLogin');
+Route::post('/gempa', [GempaController::class, 'store'])->middleware('IsLogin');
+Route::put('/gempa/{id}', [GempaController::class, 'update'])->middleware('IsLogin');
+Route::delete('/gempa/{id}', [GempaController::class, 'destroy'])->middleware('IsLogin');
 
-/*
- * Outlets Routes
- */
-Route::get('/our_outlets', [OutletMapController::class, 'index'])->name('outlet_map.index');
-Route::resource('outlets', OutletController::class);
- 
+# Visualisasi Gempa Controller
+Route::get('/visualisasi-gempa', [VisualisasiGempaController::class, 'index'])->middleware('IsLogin');
+
+# Landing
+Route::get('/', [LandingController::class, 'index']);
+Route::get('/detail/{id}', [LandingController::class, 'detail']);
+
